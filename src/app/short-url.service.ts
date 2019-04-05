@@ -9,13 +9,15 @@ import { SHORTENED_URLS } from './mock-shortened-urls';
 })
 export class ShortUrlService {
 
+  baseUrl : string = 'https://ror-url-shortener.herokuapp.com/';
+
   constructor(private http: HttpClient) { }
 
   getUrls(): Observable<ShortenedUrl[]> {
-    return this.http.get<ShortenedUrl[]>('http://localhost:3000/top.json');
+    return this.http.get<ShortenedUrl[]>(this.baseUrl+'top.json');
   }
 
   shorten(longUrl): Observable<any> {
-    return this.http.post('http://localhost:3000/url.json', {url: longUrl});
+    return this.http.post(this.baseUrl+'url.json', {url: longUrl});
   }
 }
