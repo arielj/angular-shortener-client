@@ -7,12 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { TopComponent } from './top/top.component';
 import { ShortenerComponent } from './shortener/shortener.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopComponent,
-    ShortenerComponent
+    ShortenerComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
